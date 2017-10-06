@@ -1,0 +1,21 @@
+#-------------------------------------------------------------------------------
+#----------- Lage X antall nye VHDs --------------------------------------------
+#-------------------------------------------------------------------------------
+#--Get-User-Variables-----------------------------------------------------------
+Write-Host ""
+Write-Host "    Scriptet skal lage nye VHDs              " -backgroundcolor "Red" -foregroundcolor "Black"
+Write-Host ""
+$Path = "D:\VHDs\" 
+$FileNavn = Read-Host " Du kan velge filnavn 'FILROT'"
+Write-Host ""
+$vhdCount = Read-Host " Hvor mange VHDs vil du ha?"
+Write-Host ""
+
+#--for-loop-lager-nye-VHDs------------------------------------------------------
+for ($i=1; $i -le $vhdCount; $i++)
+{
+New-VHD -Path $Path\$fileNavn$i.vhd -SizeBytes 10MB -Dynamic
+}
+
+#----------- END ---------------------------------------------------------------
+#----------- Mindaugas Lukauskas------------------------------------------------
